@@ -1,0 +1,12 @@
+.story__article::after, .story h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #studio h2::before, #studio h2::after {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
