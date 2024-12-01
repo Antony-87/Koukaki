@@ -27,7 +27,7 @@
 }
 
 /* Effet de déplacement vers le haut */
-.banner_img {
+.banner_img, .story, #studio {
   animation: moveUp 1s ease-in-out;
 }
 
@@ -38,4 +38,58 @@
   100% {
     transform: translateY(0); /* Ajustez la valeur en fonction de votre besoin */
   }
+}
+
+/* Effet de fixation du texte */
+p {
+  animation: fixed 4s ease-in-out forwards; /* Ajout de "forwards" pour conserver la position finale */
+
+  opacity: 0; /* Optionnel : démarre transparent */
+}
+
+@keyframes fixed {
+  0% {
+   
+    opacity: 0; /* Optionnel : transparent au début */
+  }
+  100% {
+    
+    opacity: 1; /* Optionnel : complètement visible */
+  }
+}
+
+/* Section bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ajustez la hauteur selon vos besoins */
+  overflow: hidden;
+}
+
+/* Vidéo en arrière-plan */
+.banner_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recouvre toute la section en gardant les proportions */
+  z-index: 1;
+  display: block;
+}
+
+/* Image de fallback */
+.banner_img {
+  object-fit: cover;
+  z-index: 0; /* Derrière la vidéo */
+  display: block;
+}
+
+/* Contenu principal */
+.banner_content {
+  position: relative;
+  z-index: 2; /* Devant la vidéo et l'image */
+  text-align: center;
+  color: white; /* Ajustez selon vos besoins */
+  padding: 20px;
 }
