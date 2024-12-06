@@ -78,11 +78,36 @@ p {
   display: block;
 }
 
-/* Image de fallback */
+/* Image du logo */
 .banner_img {
   object-fit: cover;
-  z-index: 0; /* Derrière la vidéo */
+  z-index: 2; /* Devant la vidéo */
   display: block;
+}
+
+.banner_img {
+  display: inline-block; /* S'assurer que l'image peut être animée */
+  animation: float 5s ease-in-out infinite; /* Durée et répétition */
+  transition: transform 0.3s; /* Transition pour un effet plus fluide */
+}
+
+/* Animation de flottement */
+@keyframes float {
+  0% {
+      transform: translateY(-10px); /* Position initiale */
+  }
+  25% {
+    transform: translateX(-10px); /* Déplacement vers la gauche*/ 
+}
+  50% {
+    transform: translateY(10px); /* Déplacement vers le bas */ 
+  }
+  75% {
+    transform: translateX(10px); /* déplacement vers la droite*/
+}
+  100% {
+    transform: translateY(-10px); /* Position initiale */
+  }
 }
 
 /* Contenu principal */

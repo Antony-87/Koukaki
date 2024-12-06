@@ -7,8 +7,8 @@ get_header();
         <section class="banner">
     <!-- Vidéo en arrière-plan -->
     <video class="banner_video" autoplay muted loop playsinline>
-        <source src="/wp-content/themes/foce-child/videos/StudioKoukaki.mp4" type="video/mp4">
-        <!-- Ajoutez d'autres formats si nécessaire -->
+        <source src="/Koukaki/wp-content/themes/foce-child/assets/videos/Studio-Koukaki-video.mp4" type="video/mp4">
+        <!-- Fallback formats -->
     </video>
 
     <!-- Image en fallback -->
