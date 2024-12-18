@@ -111,4 +111,10 @@ p {
   text-align: center;
   color: white; /* Ajustez selon vos besoins */
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .banner_video {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
