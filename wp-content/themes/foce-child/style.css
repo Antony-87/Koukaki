@@ -83,25 +83,25 @@ p {
 .banner_img {
   display: inline-block; /* S'assurer que l'image peut être animée */
   animation: float 5s ease-in-out infinite; /* Durée et répétition */
-  transition: transform 0.3s; /* Transition pour un effet plus fluide */
+  will-change: transform; /* Optimisation pour les performances */
 }
 
 /* Animation de flottement */
 @keyframes float {
   0% {
-    transform: translateY(-10px); /* Position initiale */
+    transform: translate(0, -10px); /* Position initiale avec léger décalage vers le haut */
   }
   25% {
-    transform: translateX(-10px); /* Déplacement vers la gauche*/
+    transform: translate(-10px, 0); /* Déplacement subtil vers la gauche */
   }
   50% {
-    transform: translateY(10px); /* Déplacement vers le bas */
+    transform: translate(0, 10px); /* Descente au milieu */
   }
   75% {
-    transform: translateX(10px); /* déplacement vers la droite*/
+    transform: translate(10px, 0); /* Déplacement vers la droite */
   }
   100% {
-    transform: translateY(-10px); /* Position initiale */
+    transform: translate(0, -10px); /* Retour à la position initiale */
   }
 }
 /* Contenu principal */
@@ -117,4 +117,21 @@ p {
   .banner_video {
     display: none;
   }
+}
+swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

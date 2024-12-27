@@ -19,7 +19,6 @@ get_header();
         <!-- Ajoutez ici du contenu supplémentaire si nécessaire -->
     </div>
 </section>
-
         <section id="#story" class="story">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
@@ -36,29 +35,20 @@ get_header();
             $characters_query = new WP_Query($args);
             ?>
             <article id="characters">
-                <div class="main-character">
-                    <h3>Les personnages</h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-                </div>
                 <div class="other-characters">
+                    <h3>Les personnages</h3> 
+                    <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
+                         slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+                        coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true" loop="true">
                     <?php
                     while ( $characters_query->have_posts() ) {
                         $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
+                    echo '<swiper-slide>';
+                    echo '<img src="' . get_the_post_thumbnail_url( get_the_ID(), 'full' ) . '" alt="' . get_the_title( get_the_ID() ) . '">';
+                    echo '</swiper-slide>';
                     }
                     ?>
+                    </swiper-container>
                 </div>
             </article>
             <article id="place">
@@ -69,8 +59,6 @@ get_header();
 
             </article>
         </section>
-
-
         <section id="studio">
             <h2>Studio Koukaki</h2>
             <div>

@@ -14,3 +14,54 @@ if ( get_stylesheet() !== get_template() ) {
         return get_option( 'theme_mods_' . get_template(), $default );
     } );
 }
+
+function import_scripts() {
+    // Enregistrer et charger le fichier script.js
+    wp_enqueue_script(
+        'mon-script', // Nom unique du script
+        get_stylesheet_directory_uri() . '/js/script.js', // Chemin vers le fichier
+        array('jquery'), // Dépendances (si nécessaires, ex. jQuery)
+        '1.0', // Version du script
+        true // Charger dans le footer
+    );
+
+    // Charger Swiper CSS
+    wp_enqueue_style(
+        'swiper-style', // Nom unique pour Swiper
+        'https://unpkg.com/swiper/swiper-bundle.min.css', // URL du fichier CSS
+        array(), // Aucune dépendance
+        null // Pas de version spécifique
+    );
+
+    // Charger Swiper JS
+    wp_enqueue_script(
+        'swiper-script', // Nom unique pour Swiper
+        'https://unpkg.com/swiper/swiper-bundle.min.js', // URL du fichier JS
+        array(), // Pas de dépendances
+        null, // Pas de version spécifique
+        true // Charger dans le footer
+    );
+
+    // Ajouter un script inline pour initialiser Swiper
+    wp_add_inline_script(
+        'swiper-script', // Nom du script auquel l'ajouter
+        "
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        "
+    );
+}
+add_action('wp_enqueue_scripts', 'import_scripts');
