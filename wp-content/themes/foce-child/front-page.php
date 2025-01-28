@@ -19,6 +19,22 @@ get_header();
         <!-- Ajoutez ici du contenu supplémentaire si nécessaire -->
     </div>
 </section>
+
+
+<h2 class="horizontale">
+      <div class="container reveal">
+        <div class="text-container">
+          <p class="text-box">L'</p>
+        </div>
+      </div>
+      <div class="container reveal_late">
+        <div class="text-container">
+          <p class="text-box2">Histoire</p>
+        </div>
+      </div>
+</h2>
+
+
         <section id="#story" class="story">
             <h2>L'histoire</h2>
             <article id="" class="story__article">

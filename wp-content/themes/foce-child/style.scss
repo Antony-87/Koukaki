@@ -182,3 +182,36 @@ h3 {
 .swiper-pagination {
   position: unset;
 }
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* reveal_late est plus lent à s'afficher */
+
+.reveal_late{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.reveal_late.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.horizontale {
+  display:flex !important;
+  width: 800px;
+  justify-content: center;
+    margin: auto;
+}
