@@ -53,11 +53,13 @@ function import_scripts() {
                 disableOnInteraction: false,
             },
             pagination: {
-    el: '.swiper-pagination',
-    clickable: false,
-    renderBullet: function () {
-      return '';
-    },
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
         "
     );

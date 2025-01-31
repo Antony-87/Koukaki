@@ -18,7 +18,6 @@
             <li><a href="#">Contact</a></li>
         </ul>
 	</footer><!-- #colophon -->
-   
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
